@@ -1,0 +1,51 @@
+.body {
+  width: 100vw;
+  height: 100vh;
+}
+.brandLink {
+  text-decoration: none;
+  font-size: x-large;
+}
+.home {
+  display: flex;
+}
+.productContainer {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  width: 78vw;
+  padding: 20px;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.filters {
+  display: flex;
+  width: 20vw;
+  padding: 20px;
+  flex-direction: column;
+  height: 86vh;
+  background-color: gray;
+  color: black;
+}
+.title {
+  padding-bottom: 20px;
+  font-size: x-large;
+}
+.products {
+  width: 30%;
+  margin: 10px;
+}
+.cartImg{
+  border-radius: 50%;
+}
+.cartDetails{
+  display: flex;
+
+}
+.cartDelete{
+
+}
+.mainCart{
+  padding: 5px;margin: 4px;
+  display: flex;
+}
