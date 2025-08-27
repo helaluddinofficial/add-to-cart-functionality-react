@@ -18,7 +18,7 @@ const SingleProduct = ({ prod }) => {
         <CardBody>
           <CardTitle>{prod.name}</CardTitle>
           <CardSubtitle>
-            <span> ৳: {prod.price.split('.')[0]}</span>
+            <span> Price:${prod.price.split('.')[0]}</span>
 
             {prod.fastDelivery ? (
               <div> Fast Deliver</div>
@@ -28,9 +28,20 @@ const SingleProduct = ({ prod }) => {
             <Rating rating={prod.rating} />
           </CardSubtitle>
           {cart.some((p) => p.id === prod.id) ? (
-            <Button variant="danger">Remove from Cart</Button>
+            <Button variant="danger" onClick={() => {
+              dispatch({
+                type: 'REMOVE_FROM_CART',
+                payload:prod,
+              });
+            }}
+            >Remove from Cart</Button>
           ) : (
-            <Button onClick={()=>{dispatch({type:"ADD_TO_CART",payload:prod})}} disabled={!prod.instock}>
+            <Button
+              onClick={() => {
+                dispatch({ type: 'ADD_TO_CART', payload: prod });
+              }}
+              disabled={!prod.instock}
+            >
               {!prod.instock ? 'Out of Stock' : 'Add to Cart'}
             </Button>
           )}
